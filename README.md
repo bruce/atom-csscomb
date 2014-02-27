@@ -3,6 +3,14 @@
 Sort properties of one or more CSS/SCSS/Less rules using
 [CSScomb](http://csscomb.com/).
 
+## Installation
+
+See the [Atom docs](http://atom.io/docs/latest/customizing-atom#installing-packages).
+
+```shell
+$ apm install csscomb
+```
+
 ## CSScomb Configuration
 
 The plugin uses the following strategy to determine the CSScomb configuration to use.
