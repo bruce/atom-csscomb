@@ -10,8 +10,11 @@ module.exports =
 
 csscomb = (editor) ->
   ranges = CsscombRangeFinder.rangesFor(editor)
+  syntax = editor.getTitle()?.split('.').pop()
+  unless syntax in ['css', 'scss', 'sass', 'less']
+    syntax = 'css'
   ranges.forEach (range) ->
     content = editor.getTextInBufferRange(range)
     comb = new Comb("zen")
-    result = comb.processString(content)
+    result = comb.processString(content, syntax)
     editor.setTextInBufferRange(range, result)
