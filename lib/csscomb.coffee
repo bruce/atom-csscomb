@@ -28,11 +28,15 @@ config = ->
       console.log "Could not find project CSScomb config, using default: 'csscomb'"
       "csscomb"
 
+syntaxes =
+  supported: ['css', 'scss', 'less']
+  default: 'css'
+
 csscomb = (editor) ->
   ranges = CsscombRangeFinder.rangesFor(editor)
   syntax = editor.getTitle()?.split('.').pop()
-  unless syntax in ['css', 'scss', 'sass', 'less']
-    syntax = 'css'
+  unless syntax in syntaxes.supported
+    syntax = syntaxes.default
   ranges.forEach (range) ->
     content = editor.getTextInBufferRange(range)
     comb = new Comb(config())
