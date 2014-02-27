@@ -3,9 +3,9 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'CSSComb'
+      'label': 'CSScomb'
       'submenu': [
-        { 'label': 'Sort Properties', 'command': 'csscomb:run' }
+        { 'label': 'Sort', 'command': 'csscomb:run' }
       ]
     ]
   },
@@ -14,7 +14,7 @@
     'submenu': [
       'label': 'Lines'
       'submenu': [
-        { 'label': 'Sort with CSSComb', 'command': 'csscomb:run'}
+        { 'label': 'Sort with CSScomb', 'command': 'csscomb:run'}
       ]
     ]
   }

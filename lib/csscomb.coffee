@@ -13,19 +13,19 @@ module.exports =
 config = ->
   userConfig = atom.config.get('csscomb')
   if userConfig
-    console.log "Found user CSSComb config:", userConfig
+    console.log "Found user CSScomb config:", userConfig
     userConfig
   else
     jsonConfig = atom.project.resolve(".csscomb.json")
     csonConfig = atom.project.resolve(".csscomb.cson")
     if fs.existsSync(jsonConfig)
-      console.log "Found project CSSComb config:", jsonConfig
+      console.log "Found project CSScomb config:", jsonConfig
       require jsonConfig
     else if fs.existsSync(csonConfig)
-      console.log "Found project CSSComb config:", csonConfig
+      console.log "Found project CSScomb config:", csonConfig
       CSON.readFileSync(csonConfig)
     else
-      console.log "Could not find project CSSComb config, using default: 'csscomb'"
+      console.log "Could not find project CSScomb config, using default: 'csscomb'"
       "csscomb"
 
 csscomb = (editor) ->
