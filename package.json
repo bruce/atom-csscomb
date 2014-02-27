@@ -1,0 +1,16 @@
+{
+  "name": "atom-csscomb",
+  "main": "./lib/csscomb",
+  "version": "0.0.1",
+  "private": true,
+  "description": "A short description of your package",
+  "activationEvents": ["csscomb:run"],
+  "repository": "https://github.com/bruce/atom-csscomb",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "csscomb": "~2.0.4"
+  }
+}

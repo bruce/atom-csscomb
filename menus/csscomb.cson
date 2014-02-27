@@ -1,0 +1,21 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'CSSComb'
+      'submenu': [
+        { 'label': 'Sort Properties', 'command': 'csscomb:run' }
+      ]
+    ]
+  },
+  {
+    'label': 'Edit'
+    'submenu': [
+      'label': 'Lines'
+      'submenu': [
+        { 'label': 'Sort with CSSComb', 'command': 'csscomb:run'}
+      ]
+    ]
+  }
+]
