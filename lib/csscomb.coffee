@@ -11,17 +11,22 @@ module.exports =
       csscomb(editor)
 
 config = ->
-  jsonConfig = atom.project.resolve(".csscomb.json")
-  csonConfig = atom.project.resolve(".csscomb.cson")
-  if fs.existsSync(jsonConfig)
-    console.log "Found project CSSComb config:", jsonConfig
-    require jsonConfig
-  else if fs.existsSync(csonConfig)
-    console.log "Found project CSSComb config:", csonConfig
-    CSON.readFileSync(csonConfig)
+  userConfig = atom.config.get('csscomb')
+  if userConfig
+    console.log "Found user CSSComb config:", userConfig
+    userConfig
   else
-    console.log "Could not find project CSSComb config, using default: 'csscomb'"
-    "csscomb"
+    jsonConfig = atom.project.resolve(".csscomb.json")
+    csonConfig = atom.project.resolve(".csscomb.cson")
+    if fs.existsSync(jsonConfig)
+      console.log "Found project CSSComb config:", jsonConfig
+      require jsonConfig
+    else if fs.existsSync(csonConfig)
+      console.log "Found project CSSComb config:", csonConfig
+      CSON.readFileSync(csonConfig)
+    else
+      console.log "Could not find project CSSComb config, using default: 'csscomb'"
+      "csscomb"
 
 csscomb = (editor) ->
   ranges = CsscombRangeFinder.rangesFor(editor)
