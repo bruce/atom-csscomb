@@ -11,6 +11,7 @@
     "atom": ">0.50.0"
   },
   "dependencies": {
-    "csscomb": "~2.0.4"
+    "csscomb": "~2.0.4",
+    "season": "~1.0.2"
   }
 }
