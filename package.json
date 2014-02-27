@@ -1,10 +1,12 @@
 {
   "name": "csscomb",
   "main": "./lib/csscomb",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "private": true,
   "description": "Atom Editor plugin for CSScomb, http://csscomb.com",
-  "activationEvents": ["csscomb:run"],
+  "activationEvents": [
+    "csscomb:run"
+  ],
   "repository": "https://github.com/bruce/atom-csscomb",
   "license": "MIT",
   "engines": {
