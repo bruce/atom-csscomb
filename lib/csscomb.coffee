@@ -10,7 +10,7 @@ module.exports =
       editor = atom.workspaceView.getActivePaneItem()
       csscomb(editor)
 
-config = ->
+findConfig = ->
   userConfig = atom.config.get('csscomb')
   if userConfig
     console.log "Found user CSScomb config:", userConfig
@@ -37,8 +37,9 @@ csscomb = (editor) ->
   syntax = editor.getTitle()?.split('.').pop()
   unless syntax in syntaxes.supported
     syntax = syntaxes.default
+  config = findConfig()
   ranges.forEach (range) ->
     content = editor.getTextInBufferRange(range)
-    comb = new Comb(config())
+    comb = new Comb(config)
     result = comb.processString(content, syntax)
     editor.setTextInBufferRange(range, result)
