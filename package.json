@@ -1,9 +1,9 @@
 {
-  "name": "atom-csscomb",
+  "name": "csscomb",
   "main": "./lib/csscomb",
   "version": "0.0.2",
   "private": true,
-  "description": "A short description of your package",
+  "description": "Atom Editor plugin for csscomb",
   "activationEvents": ["csscomb:run"],
   "repository": "https://github.com/bruce/atom-csscomb",
   "license": "MIT",
