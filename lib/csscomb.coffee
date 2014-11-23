@@ -29,7 +29,7 @@ findConfig = ->
       "csscomb"
 
 syntaxes =
-  supported: ['css', 'scss', 'less']
+  supported: ['css', 'sass', 'scss', 'less']
   default: 'css'
 
 csscomb = (editor) ->
