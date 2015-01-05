@@ -42,8 +42,8 @@ csscomb = (editor) ->
   syntax = (editor.getTitle().split '.').pop()
   syntax = syntaxes.default unless syntax in syntaxes.supported
   config = findConfig()
+  comb = new Comb config
   ranges.forEach (range) ->
     content = editor.getTextInBufferRange range
-    comb = new Comb config
     result = comb.processString content, syntax: syntax
     editor.setTextInBufferRange range, result
