@@ -41,5 +41,5 @@ csscomb = (editor) ->
   ranges.forEach (range) ->
     content = editor.getTextInBufferRange(range)
     comb = new Comb(config)
-    result = comb.processString(content, syntax)
+    result = comb.processString content, syntax: syntax
     editor.setTextInBufferRange(range, result)
