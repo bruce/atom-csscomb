@@ -6,9 +6,9 @@ CSON = require "season"
 module.exports =
 
   activate: (state) ->
-    atom.workspaceView.command 'csscomb:run', '.editor', ->
-      editor = atom.workspaceView.getActivePaneItem()
-      csscomb(editor)
+	atom.commands.add 'atom-text-editor', 'csscomb:run', ->
+		editor = atom.workspace.activePaneItem      
+		csscomb(editor)
 
 findConfig = ->
   userConfig = atom.config.get('csscomb')
