@@ -7,7 +7,7 @@ module.exports =
 
   activate: (state) ->
 	atom.commands.add 'atom-text-editor', 'csscomb:run', ->
-		editor = atom.workspace.activePaneItem      
+		editor = Workspace::getActivePaneItem
 		csscomb(editor)
 
 findConfig = ->
