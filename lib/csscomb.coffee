@@ -6,7 +6,7 @@ CSON = require 'season'
 module.exports =
   activate: (state) ->
 	atom.commands.add 'atom-text-editor', 'csscomb:run', ->
-		csscomb Workspace::getActivePaneItem()
+		csscomb atom.workspace.getActivePaneItem()
 
 findConfig = ->
   userConfig = atom.config.get 'csscomb'
@@ -14,8 +14,8 @@ findConfig = ->
     console.log 'Found user CSScomb config:', userConfig
     userConfig
   else
-    jsonConfig = atom.project.resolve '.csscomb.json'
-    csonConfig = atom.project.resolve '.csscomb.cson'
+    jsonConfig = atom.project.getDirectories()[0]?.resolve '.csscomb.json'
+    csonConfig = atom.project.getDirectories()[0]?.resolve '.csscomb.cson'
     if fs.existsSync jsonConfig
       console.log 'Found project CSScomb config:', jsonConfig
       require jsonConfig
