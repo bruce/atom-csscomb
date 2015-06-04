@@ -1,7 +1,7 @@
 {
   "name": "csscomb",
   "main": "./lib/csscomb",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "description": "Atom Editor plugin for CSScomb, http://csscomb.com",
   "activationCommands": {
